@@ -1,0 +1,633 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1. Installing Python &#8212; Data analytics in accounting</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '0_installing_Python';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Introduction to Python" href="1_Intro_to_Python.html" />
+    <link rel="prev" title="Introduction to data analytics in accounting" href="book_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="book_intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="book_intro.html">
+                    Introduction to data analytics in accounting
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic data analytics in accounting</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Intro_to_Python.html">2. Introduction to Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Pandas_basics.html">3. Pandas data basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Pandas_data_preprocessing.html">4. Pandas Data preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Connecting_with_accounting_databases.html">5. Connecting with accounting databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Visualisation_with_Python.html">6. Visualisations with Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Basic_statistics_with_Python.html">7. Basic statistics and time series analysis with Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Machine learning in accounting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="7.1_ML_for_structured_data-classification.html">8. Machine learning for structured data - Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.2_ML_for_structured_data-regression.html">9. Machine learning for structured data - Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.3_ML_for_structured_data-xgboost_example.html">10. Example - Xgboost, state-of-the-art ensemble method for structured data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7.4_ML_for_structured_data-example.html">11. Example of grid-search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_Decision_making_in_accounting.html">12. Decision making with ML in accounting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_Deep_learning_in_accounting.html">13. Deep learning in accounting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.1_Bonus_example.html">14. Bonus example - starting from scratch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9.2_AccFin_example.html">15. Deep learning example from Accounting/Finance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_NLP_in_accounting.html">16. Introduction to natural language processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.1_LDA_bonus_example.html">17. Basic LDA example - An analysis of ~200 scientific articles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.2_Advanced_NLP_accfin.html">18. Advanced NLP and Accounting/Finance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_Neural_NLP_methods.html">19. Neural NLP models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.1_Neural_NLP_and_accfin.html">20. Neural NLP and accounting/finance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.2_Transformers_examples.html">21. Transformers examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_BONUS-processing_unstructured_data.html">22. Processing unstructured data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/0_installing_Python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Installing Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">1.1. Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-anaconda">1.2. Installing Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-anaconda">1.3. Updating Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-pure-python">1.4. Installing pure Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">1.5. Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">1.6. Jupyter notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-jupyter-notebooks-your-gateway-to-python-programming">1.7. Launching Jupyter Notebooks: Your Gateway to Python Programming</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="installing-python">
+<h1><span class="section-number">1. </span>Installing Python<a class="headerlink" href="#installing-python" title="Permalink to this heading">#</a></h1>
+<p>As you embark on your journey into data analytics in accounting, one of the first technical decisions you’ll face is how to install Python. There are two widely adopted alternatives:</p>
+<ol class="arabic simple">
+<li><p>Direct Installation from Python’s Official Website: You can download the installation files directly from Python’s official website: <a class="reference external" href="https://www.python.org">www.python.org</a></p></li>
+<li><p>Using the Anaconda Environment: Another option is to use Anaconda, which you can download from Anaconda’s official website: <a class="reference external" href="https://www.anaconda.com">www.anaconda.com</a></p></li>
+</ol>
+<p>Both of these methods have distinct advantages and limitations, which I will elaborate on below to help you make an informed decision.</p>
+<p><strong>Direct Python Installation</strong></p>
+<p><strong>Pros:</strong></p>
+<p>Up-t-Date Libraries: With a direct installation, you often get the most recent versions of Python libraries. You can manage these libraries easily using pip, Python’s package installer.</p>
+<p>Lean Setup: A direct installation includes only the essential features, making it a lighter package that uses less disk space.</p>
+<p>Full Control: You have more direct control over your Python environment, including which libraries to install.</p>
+<p><strong>Cons:</strong></p>
+<p>Initial Complexity: New users might find it challenging to manage different libraries and dependencies manually.</p>
+<p>Potential for Conflicts: Without a managed environment, there’s a greater onus on the user to resolve any library conflicts.</p>
+<p><strong>Anaconda Environment</strong></p>
+<p><strong>Pros:</strong></p>
+<p>Comprehensive: Anaconda provides a robust and integrated environment that comes pre-packaged with a wide array of libraries and tools geared toward data science.</p>
+<p>Ease of Use: It offers a more user-friendly approach to package management and environment management, making it a good choice for beginners.</p>
+<p>Versatility: Anaconda allows you to create multiple environments, which can be beneficial if you’re working on different projects that require different library versions.</p>
+<p><strong>Cons:</strong></p>
+<p>Disk Space: Anaconda comes with many features and libraries that you may not need, consuming more disk space.</p>
+<p>Slightly Outdated Libraries: The libraries in Anaconda can sometimes lag behind the most current versions available through pip.</p>
+<p><strong>Personal Experience and Recommendation</strong></p>
+<p>In my own journey, I started with Anaconda to take advantage of its user-friendly environment and extensive suite of pre-installed libraries. However, as my needs became more specialized and disk space more precious, I transitioned to a “pure” Python setup to benefit from the latest library versions and more direct control over my environment.</p>
+<p>Your choice may depend on several factors, including your level of familiarity with Python, specific project requirements, and computer limitations. Both approaches are viable, but they cater to different needs and skill levels.</p>
+<section id="anaconda">
+<h2><span class="section-number">1.1. </span>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading">#</a></h2>
+<p><img alt="snake" src="_images/snake.png" /></p>
+<p>Anaconda is a highly recommended environment for those embarking on their journey through this book and, more broadly, in data analytics in accounting. Anaconda provides an integrated, pre-packaged set of libraries and tools designed to facilitate scientific computing and data science. To learn more or initiate the installation process, please visit <a class="reference external" href="https://www.anaconda.com/">www.anaconda.com</a>. For the exercises and case studies in this book, you will require numerous Python libraries that extend beyond the core installation. While you could certainly install these libraries manually in a “pure” Python environment, compatibility issues could potentially disrupt your learning process. Anaconda alleviates this concern by ensuring that all provided Python libraries are compatible with each other, and all are very easy to install.  For example, installing the GPU-enabled version of TensorFlow is a straightforward process that can be accomplished with just a few mouse clicks. In pure Python, it is extremely difficult, because you need to manually install the exact correct versions of the NVIDIA GPU libraries. Anaconda is also very popular and  functions identically across all major operating systems, offering a level of consistency that simplifies cross-platform development. Furthermore, the list of libraries is quite extensive, and it is rare that a Python library is missing from the Conda environment (although this can happen). Given Anaconda’s ease of use, its stress on compatibility, and its extensive library support, it serves as an excellent starting point for Python learners, especially those interested in data analytics in accounting. By following these guidelines, you can ensure a stable and productive learning environment.</p>
+</section>
+<section id="installing-anaconda">
+<h2><span class="section-number">1.2. </span>Installing Anaconda<a class="headerlink" href="#installing-anaconda" title="Permalink to this heading">#</a></h2>
+<p>To install Anaconda, you just need to download the binaries from <a class="reference external" href="https://www.anaconda.com/products/individual">www.anaconda.com/products/individual</a> and follow the instructions. Follow the installation instructions specific to your operating system. During this process, you’ll be prompted to set Anaconda as your default Python environment. For the purposes of this book and for those primarily learning Python, it is strongly recommended to accept this option. Note: If you plan to use both Anaconda and a “pure” Python environment, then carefully consider whether you want to set Anaconda as your default, as managing multiple Python installations can become complicated.</p>
+</section>
+<section id="updating-anaconda">
+<h2><span class="section-number">1.3. </span>Updating Anaconda<a class="headerlink" href="#updating-anaconda" title="Permalink to this heading">#</a></h2>
+<p>Anaconda utilizes conda (<a class="reference external" href="https://docs.conda.io/en/latest/">conda.io</a>) as its package and environment manager. While it’s entirely possible to manage your Anaconda environment via the graphical interface, it’s advantageous to become familiar with basic conda commands. One such command that should be executed regularly is: <strong>conda update anaconda</strong>. This command ensures that your Anaconda environment and the libraries therein are up-to-date.</p>
+<p>For more information on Conda, go to <a class="reference external" href="https://docs.conda.io/en/latest/">docs.conda.io</a>.</p>
+</section>
+<section id="installing-pure-python">
+<h2><span class="section-number">1.4. </span>Installing pure Python<a class="headerlink" href="#installing-pure-python" title="Permalink to this heading">#</a></h2>
+<p><img alt="python" src="_images/python.jpg" /></p>
+<p>While the previous sections have emphasized the benefits of using Anaconda, there are indeed valid reasons for opting for a ‘pure’ Python installation. This approach offers you more direct control over your programming environment and is often favored for specialized development needs. However, be aware that this method may require more hands-on management, especially when dealing with library dependencies.</p>
+<p><strong>Installing Python on Windows</strong></p>
+<p>For those using a Windows operating system, Python does not come pre-installed, so you’ll need to download it manually. Below are the general steps, but for a more detailed guide, please refer to Python’s official documentation on: <a class="reference external" href="https://docs.python.org/3/using/windows.html#installation-steps">docs.python.org/3/using/windows.html#installation-steps</a></p>
+<ol class="arabic simple">
+<li><p>Download: Visit Python’s official website and download the installer for the latest Python version.</p></li>
+<li><p>Run Installer: Double-click the downloaded file to start the installation process.</p></li>
+<li><p>Customization: You’ll be presented with various options. It’s generally safe to stick with the defaults, but make sure to check the box that says “Add Python to PATH” to ensure easy command-line access.</p></li>
+<li><p>Install: Click on the ‘Install Now’ button. Once the process is complete, you can verify the installation by opening a Command Prompt and typing python –version.</p></li>
+</ol>
+<p><strong>Installing Python on Linux</strong></p>
+<p>Python usually comes preinstalled on most Linux distributions. If not, it’s available as a package that you can easily install. For specific instructions tailored to your Linux distribution, consult Python’s official Linux installation guide: <a class="reference external" href="https://docs.python.org/3/using/unix.html#on-linux">docs.python.org/3/using/unix.html#on-linux</a></p>
+<ol class="arabic simple">
+<li><p>Check for Pre-installation: Open a terminal and type *<em>python –version</em> or <strong>python3 –version</strong> to see if Python is already installed.</p></li>
+<li><p>Package Manager: If Python is not installed, you can usually install it using your distribution’s package manager. For Debian-based distributions like Ubuntu, this can often be done with <strong>sudo apt-get install python3</strong>.</p></li>
+<li><p>Verify Installation: Once the installation is complete, open a new terminal window and type <strong>python3 –version</strong> to confirm that Python has been successfully installed.</p></li>
+</ol>
+<p><strong>A Note on Managing Multiple Python Environments</strong>
+If you’ve opted to install both Anaconda and pure Python, managing your PATH variables becomes important. Be cautious when setting either as your default environment, as having multiple Python installations can sometimes lead to complexities.</p>
+<p><strong>Final remarks</strong>
+Whether you choose Anaconda or a ‘pure’ Python installation is contingent on your specific needs, skill level, and the projects you’ll be working on. Each has its advantages and disadvantages, and your choice will set the foundation for your Python programming journey in the realm of accounting data analytics.</p>
+</section>
+<section id="environments">
+<h2><span class="section-number">1.5. </span>Environments<a class="headerlink" href="#environments" title="Permalink to this heading">#</a></h2>
+<p>Regardless of whether you opt for Anaconda or a ‘pure’ Python installation, mastering the concept of Python environments is important for several reasons:</p>
+<ol class="arabic simple">
+<li><p>Isolation: Environments allow you to work in isolated spaces, meaning you can tailor each environment with only the libraries needed for a specific project or task. This minimizes the risk of version conflicts between libraries.</p></li>
+<li><p>Reproducibility: Utilizing environments makes it easier to share your work and collaborate with others by ensuring that everyone has the same setup, thus minimizing the infamous “it works on my machine” problem.</p></li>
+<li><p>Resource Management: By limiting each environment to only the libraries it requires, you conserve disk space and computational resources, resulting in faster program execution.</p></li>
+</ol>
+<p><strong>Managing enviroments in Python</strong></p>
+<p>For those working with ‘pure’ Python, the standard tool for managing environments is venv. It provides an isolated Python environment in which you can install libraries independently of the system Python. Follow the instructions in Python’s official documentation to learn how to create, activate, and manage environments: <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">docs.python.org/3/tutorial/venv.html</a></p>
+<p>Key Commands:</p>
+<ul class="simple">
+<li><p>Creating an Environment: <strong>python3 -m venv myenv</strong></p></li>
+<li><p>Activating an Environment:</p>
+<ul>
+<li><p>On Windows: myenv\Scripts\Activate</p></li>
+<li><p>On Unix/MacOS: source myenv/bin/activate</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Managing environments in Anaconda</strong></p>
+<p>Anaconda offers its own environment management through its conda tool. These environments can be easily managed through the Anaconda Navigator, a graphical interface that comes with the Anaconda distribution. The official Anaconda documentation provides a comprehensive tutorial on creating and managing environments: <a class="reference external" href="https://docs.anaconda.com/anaconda/navigator/tutorials/manage-environments/">docs.anaconda.com/anaconda/navigator/tutorials/manage-environments/</a></p>
+<p>For those who prefer using the terminal, you can accomplish the same tasks with conda commands. The official guide provides an exhaustive list of commands and options: <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html</a></p>
+<p>Key Commands:</p>
+<ul class="simple">
+<li><p>Creating an Environment: conda create –name myenv</p></li>
+<li><p>Activating an Environment: conda activate myenv</p></li>
+</ul>
+<p><strong>Final thoughts</strong>
+Understanding and effectively using Python environments will not only make your development process more efficient but also minimize potential roadblocks related to library dependencies. Whether you are an amateur coder or an experienced developer, proper environment management is key to successful, reproducible, and scalable data analytics.</p>
+</section>
+<section id="jupyter-notebook">
+<h2><span class="section-number">1.6. </span>Jupyter notebook<a class="headerlink" href="#jupyter-notebook" title="Permalink to this heading">#</a></h2>
+<p>Jupyter Notebooks serve as one of the most dynamic environments for interactive computing and data analysis. Developed as a part of Project Jupyter, these notebooks offer a browser-based interface to Python, among other programming languages. Their capabilities extend far beyond mere code execution; they provide a multifaceted platform that amalgamates code, data, and descriptive text into a single, coherent document.</p>
+<p>Jupyter Notebooks bring a host of features conducive for academic and professional work in data science and accounting:</p>
+<ul class="simple">
+<li><p>Incremental Execution: They allow for the piecewise execution of code, enabling real-time evaluation and debugging.</p></li>
+<li><p>Rich Output: Jupyter Notebooks support a variety of output formats including tables, images, charts, and even interactive visualizations. This is particularly beneficial for tasks such as financial modeling and data visualization.</p></li>
+<li><p>Annotated Workflow: The inclusion of Markdown cells between code cells allows you to add explanatory text, mathematical equations (thanks to MathJax support), and even HTML elements, making your work more comprehensible and presentable.</p></li>
+</ul>
+<p>In recent years, Jupyter Notebooks have become an industry standard in data science and academic research. Given their versatility and ease-of-use, it’s hardly surprising that the majority of data science tutorials, courses, and example projects available online utilize Jupyter Notebooks. This is equally true for accounting analytics, where the need for data-driven decision-making is ever-increasing.</p>
+<p>While Jupyter Notebooks are not the sole avenue for Python programming, they are particularly well-suited for:</p>
+<ul class="simple">
+<li><p>Beginners: The incremental execution and rich output features make it easier for newcomers to grasp Python and data analytics concepts.</p></li>
+<li><p>Prototyping and Testing: The interactive nature of Jupyter Notebooks makes them excellent tools for quick code experiments, data analysis trials, and ad-hoc querying.</p></li>
+<li><p>Code Sharing and Collaboration: Given their comprehensive format, Jupyter Notebooks are ideal for sharing analyses, methodologies, and results with colleagues or for educational purposes.</p></li>
+</ul>
+<p>By the way, this  book was authored using Jupyter Notebooks, embodying the principles of interactive learning and data-centric academic instruction. Jupyter Notebooks offer a harmonious blend of coding capability and textual narrative, making them an indispensable tool in the modern landscape of data analytics in accounting. Whether you’re a student, a practitioner, or a seasoned researcher, integrating Jupyter Notebooks into your workflow will likely augment both your productivity and the reproducibility of your work.</p>
+</section>
+<section id="launching-jupyter-notebooks-your-gateway-to-python-programming">
+<h2><span class="section-number">1.7. </span>Launching Jupyter Notebooks: Your Gateway to Python Programming<a class="headerlink" href="#launching-jupyter-notebooks-your-gateway-to-python-programming" title="Permalink to this heading">#</a></h2>
+<p><strong>Initiating Jupyter with Anaconda</strong></p>
+<p>Once you’ve successfully installed Anaconda, launching Jupyter Notebook is a straightforward process. You have a couple of options:</p>
+<ul class="simple">
+<li><p>Via the Applications Menu: Navigate to your computer’s applications menu and search for “Jupyter Notebook.” Clicking on it will initiate the service.</p></li>
+<li><p>Via Anaconda’s Command Prompt (Windows) or Terminal (Mac/Linux): Open Anaconda’s specialized command prompt (Windows) or your regular terminal (Mac/Linux) and type the following command: <strong>jupyter notebook</strong></p></li>
+</ul>
+<p><strong>Note for Windows Users</strong>: It’s crucial to open the Anaconda-specific command prompt for the terminal command to function properly.</p>
+<p>Upon successful launch, Jupyter Notebook typically opens a new browser window that showcases your file directory. Alternatively, it may generate a URL that you’ll need to manually enter into your browser’s address bar, particularly if you’re running Jupyter in a server environment.</p>
+<p>JupyterLab is a more advanced interface that comes bundled with Anaconda. It provides a more integrated environment for Jupyter Notebook, and other types of documents and activities. To launch JupyterLab:</p>
+<ul class="simple">
+<li><p>From Anaconda Navigator: Navigate to Anaconda’s applications menu and select JupyterLab.</p></li>
+<li><p>From Command Prompt or Terminal: Enter the following command: <strong>jupyter-lab</strong></p></li>
+</ul>
+<p><strong>Initiating Jupyter with Python</strong></p>
+<p>If you opted for a ‘pure’ Python installation, you can also run Jupyter Notebook or JupyterLab, although you’ll need to install them first. Here’s how:</p>
+<ol class="arabic simple">
+<li><p>Install Jupyter: Open your terminal and run the following pip command to install Jupyter Notebook:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Notebook: <strong>pip install notebook</strong></p></li>
+<li><p>JupyterLab: <strong>pip install jupyterlab</strong></p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Launch Jupyter Notebook or JupyterLab: After installation, you can launch Jupyter Notebook by running:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Notebook: <strong>jupyter notebook</strong></p></li>
+<li><p>JupyterLab: <strong>jupyter-lab</strong></p></li>
+</ul>
+<p>A browser window should automatically open, showcasing your file directory. As with Anaconda, you may need to manually enter a URL into your browser in certain instances.</p>
+<p>That’s it! Now you have a working Python environment, and you can start coding.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="book_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to data analytics in accounting</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="1_Intro_to_Python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Introduction to Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anaconda">1.1. Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-anaconda">1.2. Installing Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-anaconda">1.3. Updating Anaconda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-pure-python">1.4. Installing pure Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">1.5. Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">1.6. Jupyter notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-jupyter-notebooks-your-gateway-to-python-programming">1.7. Launching Jupyter Notebooks: Your Gateway to Python Programming</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mikko Ranta
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
